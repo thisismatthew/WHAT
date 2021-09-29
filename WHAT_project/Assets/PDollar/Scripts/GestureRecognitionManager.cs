@@ -12,6 +12,8 @@ public class GestureRecognitionManager : MonoBehaviour {
 	public Transform gestureOnScreenPrefab;
 	public int DrawAreaWidth, DrawAreaHeight, DrawAreaX, DrawAreaY;
 
+
+
 	private List<Gesture> trainingSet = new List<Gesture>();
 
 	private List<Point> points = new List<Point>();
@@ -110,6 +112,11 @@ public class GestureRecognitionManager : MonoBehaviour {
 		message = gestureResult.GestureClass + " " + gestureResult.Score;
 		Debug.Log(message);
 
+		//clear off the gesture prefabs
+		GameObject[] lines = GameObject.FindGameObjectsWithTag("Gesture");
+		for (int i = 0; i < lines.Length; i++)
+			Destroy(lines[i]);
+
 		if (gestureResult.GestureClass == expected)
         {
 			Debug.Log("PASS");
@@ -124,7 +131,10 @@ public class GestureRecognitionManager : MonoBehaviour {
 		Debug.Log("ERROR: Gesture did not return true or false.");
 		return false;
 
+		
 	}
+
+	
 
 	public void AddNew()
     {
