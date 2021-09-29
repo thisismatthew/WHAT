@@ -137,6 +137,7 @@ public class Hayley : MonoBehaviour
         else
         {
             State = HayleyStates.Dormant;
+            gm.State = GameState.Work;
         }
     }
 

@@ -9,7 +9,8 @@ public enum GameState
 {
     Start, 
     Work,
-    Love
+    Love,
+    End
 }
 
 
@@ -19,17 +20,22 @@ public class GameManager : MonoBehaviour
     public GameState State = GameState.Start;
     public GameObject HeartProjectile;
     public float ProjectileSpeed;
-    public GameObject Dale, Hayley;
+    public GameObject Dale, Hayley, WorkImages, WorkUI;
     public List<DrawTask> Tasks;
     public DrawTask currentGestureTarget;
     private GestureRecognitionManager _grm;
     public TextMeshProUGUI TaskTitleText, TaskDescriptionText, TaskRemainingText;
     public SpriteRenderer traceImage;
-
+    public Slider uploadSlider;
     private Camera cam;
+    public int probabilityOfRandomFail = 3;
+    
 
     private void Start()
     {
+        foreach(DrawTask t in Tasks)
+            t.TaskFail = false;
+        
         State = GameState.Work;
         _grm = FindObjectOfType<GestureRecognitionManager>();
         currentGestureTarget = Tasks[0];
@@ -44,13 +50,22 @@ public class GameManager : MonoBehaviour
         }
         if (State == GameState.Love)
         {
+            WorkImages.active = false;
+            WorkUI.active = false;
             LoveUpdate();
         }
         if (State == GameState.Work)
         {
+            WorkImages.active = true;
+            WorkUI.active = true;
             WorkUpdate();
-            //enable the work screen
+            
         }
+        if (State == GameState.End)
+        {
+            Debug.Log("DONE");
+        }
+        
     }
 
     public void LoveUpdate()
@@ -79,22 +94,54 @@ public class GameManager : MonoBehaviour
 
         if (resultSuccess)
         {
-            Debug.Log("Success");
+            
+            //lets have a small possibility that this gets flipped. 
+            int random = Random.RandomRange(0, probabilityOfRandomFail);
+            if (random == 0)
+            {
+                Debug.Log("Random Failure Triggered");
+                resultSuccess = false;
+                
+            }
+            else
+            {
+                Debug.Log("Success");
+            }
         }
         if (!resultSuccess)
         {
-            previousTask.TaskName += " AGAIN";
-            previousTask.TaskDesc = "I was really unhappy with how you drew the " + previousTask.GestureName + " last time... please redo it, and GET IT RIGHT!";
+            previousTask.TaskFail = true;
             Tasks.Add(previousTask);
         }
     }
 
+    public void StartUpload()
+    {
+        uploadSlider.gameObject.GetComponent<Animator>().Play("UploadSlider");
+    }
+
     public void WorkUpdate()
     {
-        TaskTitleText.text = currentGestureTarget.TaskName;
-        TaskDescriptionText.text = currentGestureTarget.TaskDesc;
+        if (!currentGestureTarget.TaskFail)
+        {
+            TaskTitleText.text = currentGestureTarget.TaskName;
+            TaskDescriptionText.text = currentGestureTarget.TaskDesc;
+        }
+        else
+        {
+            TaskTitleText.text = currentGestureTarget.taskFailName;
+            TaskDescriptionText.text = currentGestureTarget.taskFailDesc;
+        }
+        
         traceImage.sprite = currentGestureTarget.traceImage;
         TaskRemainingText.text = "Remaining Tasks: " + Tasks.Count;
 
+        if(Tasks.Count == 0)
+        {
+            State = GameState.End;
+        }
+
     }
+
+    
 }

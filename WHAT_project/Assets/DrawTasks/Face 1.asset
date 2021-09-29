@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c67282786c132014e9f2f33ba26f4943, type: 3}
-  m_Name: Face
+  m_Name: Face 1
   m_EditorClassIdentifier: 
   traceImage: {fileID: 21300000, guid: bcae0a0a29b71fd48844e16b1f0dca0a, type: 3}
   GestureName: FACE
-  TaskName: 'A Face Please.  '
-  TaskDesc: I would like you to draw me a cool face, I have a attached a reference
-    for you to follow closely. thank you - Matthew.
+  TaskName: A picture of me
+  TaskDesc: Pls Draw me thanks, I have attatched a reference. - Thanks
   TaskFail: 1
-  taskFailName: A Face AGAIN
-  taskFailDesc: geez louise... like have you ever even seen a face. Nice hollow eyes,
-    a big smile, round head! pls REDO!
+  taskFailName: 'RE: A picture of me'
+  taskFailDesc: I am deeply offended at the drawing you did of me. Please redo it.
+    - Thanks

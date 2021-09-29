@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c67282786c132014e9f2f33ba26f4943, type: 3}
-  m_Name: Butt
+  m_Name: Butt 1
   m_EditorClassIdentifier: 
   traceImage: {fileID: 21300000, guid: 060fd8d3140f84e43b4e88f602bccfc2, type: 3}
   GestureName: BUTT
-  TaskName: Draw me a butt
-  TaskDesc: I would love a nice juicy butt drawn for me thank you, don't make it
-    be farting though - Millie Holten.
-  TaskFail: 1
-  taskFailName: My Butt Pls
-  taskFailDesc: 'The butt you drew was terrible. That was supposed to be a gift for
-    someone close to me, please redo it... THANKS. '
+  TaskName: 'A bird '
+  TaskDesc: 'please draw me a bird thats flying at like a good tilt. also make sure
+    it looks like its really far away, but also like zoomed in on. '
+  TaskFail: 0
+  taskFailName: bird looked like a butt
+  taskFailDesc: 'The bird you drew looked like a butt. I did not request that. a
+    bird please thank you. '

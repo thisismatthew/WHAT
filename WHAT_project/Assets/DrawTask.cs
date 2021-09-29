@@ -9,4 +9,7 @@ public class DrawTask : ScriptableObject
     public string GestureName;
     public string TaskName;
     public string TaskDesc;
+    public bool TaskFail = false;
+    public string taskFailName;
+    public string taskFailDesc;
 }
