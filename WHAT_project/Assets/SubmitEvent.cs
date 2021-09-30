@@ -12,6 +12,7 @@ public class SubmitEvent : MonoBehaviour
 
     public void SubmitionEvent()
     {
+        FindObjectOfType<AudioManager>().Play("Upload");
         gm.SubmitTask();
     }
 }

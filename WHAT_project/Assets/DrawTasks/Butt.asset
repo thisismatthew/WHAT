@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traceImage: {fileID: 21300000, guid: 060fd8d3140f84e43b4e88f602bccfc2, type: 3}
   GestureName: BUTT
+  Sender: Millie@Lovesbutts.com
   TaskName: Draw me a butt
-  TaskDesc: I would love a nice juicy butt drawn for me thank you, don't make it
-    be farting though - Millie Holten.
+  TaskDesc: I would love a nice juicy butt drawn for me thank you
   TaskFail: 1
   taskFailName: My Butt Pls
-  taskFailDesc: 'The butt you drew was terrible. That was supposed to be a gift for
-    someone close to me, please redo it... THANKS. '
+  taskFailDesc: 'The butt you drew was terrible. That was supposed to be a gift. '

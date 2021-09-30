@@ -9,6 +9,7 @@ public class DrawAreaDetector : MonoBehaviour
 	private LineRenderer border;
 	private Vector2 bottomLeft, topLeft, bottomRight, topRight;
 	private Camera cam;
+	public bool DebugBox = false;
 
 	private void Start()
     {
@@ -20,7 +21,7 @@ public class DrawAreaDetector : MonoBehaviour
 		border.material.color = Color.red;
 		border.startWidth = 0.1f;
 		border.endWidth = 0.1f;
-		DrawBorders();
+		
 	}
 
     public void DrawBorders()
@@ -58,6 +59,7 @@ public class DrawAreaDetector : MonoBehaviour
 
     private void Update()
     {
-		DrawBorders();
+		if (DebugBox)
+			DrawBorders();
     }
 }

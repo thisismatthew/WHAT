@@ -7,6 +7,7 @@ public class DrawTask : ScriptableObject
 {
     public Sprite traceImage;
     public string GestureName;
+    public string Sender;
     public string TaskName;
     public string TaskDesc;
     public bool TaskFail = false;

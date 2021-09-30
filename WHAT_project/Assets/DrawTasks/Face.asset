@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traceImage: {fileID: 21300000, guid: bcae0a0a29b71fd48844e16b1f0dca0a, type: 3}
   GestureName: FACE
+  Sender: anon@darkweb.com
   TaskName: 'A Face Please.  '
-  TaskDesc: I would like you to draw me a cool face, I have a attached a reference
-    for you to follow closely. thank you - Matthew.
-  TaskFail: 1
+  TaskDesc: I would like you to draw me a cool face, I have a attached a reference.
+  TaskFail: 0
   taskFailName: A Face AGAIN
-  taskFailDesc: geez louise... like have you ever even seen a face. Nice hollow eyes,
-    a big smile, round head! pls REDO!
+  taskFailDesc: 'geez louise... like have you ever even seen a face. '
