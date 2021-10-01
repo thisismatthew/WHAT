@@ -188,7 +188,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 7.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &44084675
@@ -605,6 +605,12 @@ MonoBehaviour:
   - name: Thank
     clip: {fileID: 8300000, guid: adc9165c67fb57e4ba4c73a53275c9d8, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fail
+    clip: {fileID: 8300000, guid: 43e7573c42e901c43b0bb9f02f62da86, type: 3}
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}

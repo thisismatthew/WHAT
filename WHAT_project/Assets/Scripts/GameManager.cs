@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
 
         if (resultSuccess)
         {
+            FindObjectOfType<AudioManager>().Play("Upload");
             Debug.Log("Success");
             //lets have a small possibility that this gets flipped. 
             /*int random = Random.RandomRange(0, probabilityOfRandomFail);
@@ -163,6 +164,7 @@ public class GameManager : MonoBehaviour
         }
         if (!resultSuccess)
         {
+            FindObjectOfType<AudioManager>().Play("Fail");
             Debug.Log("Fail");
             previousTask.TaskFail = true;
             Tasks.Add(previousTask);

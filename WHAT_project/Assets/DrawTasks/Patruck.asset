@@ -16,7 +16,7 @@ MonoBehaviour:
   GestureName: Star
   Sender: Mickelodeon Boss
   TaskName: 'Patruck '
-  TaskDesc: 'We need a jpg of SpongeJims best friend Patruck. He is a starfish '
+  TaskDesc: 'We need a jpg of SpongeJims best friend Patruck. He''s a starfish '
   TaskFail: 0
   taskFailName: Last warning
   taskFailDesc: draw patruck or you are fired

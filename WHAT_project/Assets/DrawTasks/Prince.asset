@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traceImage: {fileID: 21300000, guid: 7b9c4b6f52c054a478209e2901c99971, type: 3}
   GestureName: Worm
-  Sender: Peasant
-  TaskName: pls autograph
-  TaskDesc: Oh worm prince... pls bless me with your autograph
+  Sender: Worm
+  TaskName: prince
+  TaskDesc: prove you are the prince
   TaskFail: 0
-  taskFailName: I meant no offence
-  taskFailDesc: you clearly are angry at me my lord, I am sorry
+  taskFailName: pretender
+  taskFailDesc: you are not the true prince

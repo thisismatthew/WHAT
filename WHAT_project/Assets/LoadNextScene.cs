@@ -10,4 +10,11 @@ public class LoadNextScene : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Title");
+        FindObjectOfType<AudioManager>().StopAll();
+        Destroy(FindObjectOfType<AudioManager>().gameObject);
+    }
 }

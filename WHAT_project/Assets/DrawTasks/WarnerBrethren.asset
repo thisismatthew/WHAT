@@ -15,9 +15,8 @@ MonoBehaviour:
   traceImage: {fileID: 21300000, guid: 7df1873fef339ad4fa2c98f44f5b92cf, type: 3}
   GestureName: Scar
   Sender: Warner Brethren
-  TaskName: Harvey Pooter HELP HELP
-  TaskDesc: help we have a new Harvey Pooter movie coming out but cannot remember
-    what his scar looks like. Do you happen to know?
+  TaskName: Harvey Pooter
+  TaskDesc: Help! What shape is Harvey Pooters scar
   TaskFail: 0
   taskFailName: HELP HELP HELP
   taskFailDesc: ' what you sent us was not Harvey Pooters iconic scar'

@@ -159,7 +159,7 @@ public class Hayley : MonoBehaviour
                 Color newColor = sr.color;
                 newColor.a = Mathf.Lerp(newColor.a, 0, Time.deltaTime);
 
-                if (sr.color.a <= 0.2)
+                if (sr.color.a <= 0.5)
                     newColor.a = 0f;
 
                 sr.color = newColor;
@@ -193,7 +193,7 @@ public class Hayley : MonoBehaviour
             {
                 Color newColor = sr.color;
                 newColor.a = Mathf.Lerp(newColor.a, 1, Time.deltaTime);
-                if (sr.color.a >= 0.8)
+                if (sr.color.a >= 0.5f)
                     newColor.a = 1f;
 
                 sr.color = newColor;

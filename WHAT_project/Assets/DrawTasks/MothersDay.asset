@@ -16,7 +16,7 @@ MonoBehaviour:
   GestureName: Heart
   Sender: Mum
   TaskName: 'Mothers day '
-  TaskDesc: ' you forgot mothers day and only a lovely drawing will make up for this   '
+  TaskDesc: 'you forgot mothers day and only a drawing will make up for this   '
   TaskFail: 0
   taskFailName: Do not call me
   taskFailDesc: wow Dale that was not a good drawing. Try again
