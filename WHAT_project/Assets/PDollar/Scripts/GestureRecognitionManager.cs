@@ -39,8 +39,10 @@ public class GestureRecognitionManager : MonoBehaviour {
 		//Load pre-made gestures
 		TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
 		foreach (TextAsset gestureXml in gesturesXml)
+        {
+			Debug.Log("added");
 			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
-
+		}
 		//Load user custom gestures
 		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
 		foreach (string filePath in filePaths)

@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Success");
             //lets have a small possibility that this gets flipped. 
-            int random = Random.RandomRange(0, probabilityOfRandomFail);
+            /*int random = Random.RandomRange(0, probabilityOfRandomFail);
             if (random == 0)
             {
                 Debug.Log("Random Failure Triggered");
@@ -159,10 +159,11 @@ public class GameManager : MonoBehaviour
             else
             {
 
-            }
+            }*/
         }
         if (!resultSuccess)
         {
+            Debug.Log("Fail");
             previousTask.TaskFail = true;
             Tasks.Add(previousTask);
         }

@@ -204,7 +204,7 @@ public class Hayley : MonoBehaviour
         if (Vector2.Distance(transform.position, EnterSpot.position) > discoverRadius)
         {
             //lerp to it
-            Debug.Log("Lerping to start spot");
+            //Debug.Log("Lerping to start spot");
             this.GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position, EnterSpot.position, timer));
         }
         else
