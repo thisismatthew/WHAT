@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67282786c132014e9f2f33ba26f4943, type: 3}
+  m_Name: JoeBlow
+  m_EditorClassIdentifier: 
+  traceImage: {fileID: 21300000, guid: d2f35c28fdfe42b4483415985475b84a, type: 3}
+  GestureName: Smiley
+  Sender: Joe Blow
+  TaskName: My Friend
+  TaskDesc: can you draw my friend I will give you 10 dollars please make it funny
+  TaskFail: 0
+  taskFailName: make it funnier
+  taskFailDesc: make it funnier or my friend wont laugh

@@ -550,13 +550,13 @@ MonoBehaviour:
   sounds:
   - name: MainMusic
     clip: {fileID: 8300000, guid: b58f271d3fedca043b06fb60384134d0, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: HayleyRampage
     clip: {fileID: 8300000, guid: 5a217b82889533c4d866e452f288aaa4, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -573,20 +573,38 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: HappyBirthday
-    clip: {fileID: 8300000, guid: 4d56bda45aff5b347b7dfc4286e619c1, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: e254927a628e43f43b1e2555e7b9597f, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: HayleyRampage
     clip: {fileID: 8300000, guid: 5a217b82889533c4d866e452f288aaa4, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Kiss
     clip: {fileID: 8300000, guid: 57a231e0a7f1c504da0ab2266cd045f3, type: 3}
-    volume: 0.2
+    volume: 0.181
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: What
+    clip: {fileID: 8300000, guid: 49a97806dbd73934882a8f8e041aa545, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Yell
+    clip: {fileID: 8300000, guid: 4bfc4d2cb46641b41a15332f88665f14, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Thank
+    clip: {fileID: 8300000, guid: adc9165c67fb57e4ba4c73a53275c9d8, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -784,10 +802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 768}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

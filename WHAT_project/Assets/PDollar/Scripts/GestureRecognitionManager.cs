@@ -88,7 +88,7 @@ public class GestureRecognitionManager : MonoBehaviour {
 				vertexCount = 0;
 			}
 			
-			if (Input.GetMouseButton(0)) {
+			if (Input.GetMouseButton(0) && currentGestureLineRenderer != null) {
 				points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
 
 				currentGestureLineRenderer.SetVertexCount(++vertexCount);
@@ -116,6 +116,7 @@ public class GestureRecognitionManager : MonoBehaviour {
 		GameObject[] lines = GameObject.FindGameObjectsWithTag("Gesture");
 		for (int i = 0; i < lines.Length; i++)
 			Destroy(lines[i]);
+
 
 		if (gestureResult.GestureClass == expected)
         {

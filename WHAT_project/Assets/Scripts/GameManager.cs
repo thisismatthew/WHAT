@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer traceImage;
     public Slider uploadSlider;
     private Camera cam;
-    public int probabilityOfRandomFail = 1;
+    public int probabilityOfRandomFail = 3;
     public List<GameObject> GestureLines;
     public SpriteRenderer daleSpriteRenderer;
     public List<Sprite> spriteState;
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Stop("MainMusic");
                 ScreenAnim.Play("Shrink");
                 ScreenOpened = false;
+                _grm.enabled = false;
             }
             LoveUpdate();
         }
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Stop("HayleyRampage");
                 FindObjectOfType<AudioManager>().Play("MainMusic");
                 ScreenAnim.Play("Expand");
+                _grm.enabled = true;
                 ScreenOpened = true;
             }
             WorkUpdate();
@@ -145,18 +147,18 @@ public class GameManager : MonoBehaviour
 
         if (resultSuccess)
         {
-            
+            Debug.Log("Success");
             //lets have a small possibility that this gets flipped. 
             int random = Random.RandomRange(0, probabilityOfRandomFail);
             if (random == 0)
             {
                 Debug.Log("Random Failure Triggered");
                 resultSuccess = false;
-                
+
             }
             else
             {
-                Debug.Log("Success");
+
             }
         }
         if (!resultSuccess)

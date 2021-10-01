@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67282786c132014e9f2f33ba26f4943, type: 3}
+  m_Name: SpongeJim
+  m_EditorClassIdentifier: 
+  traceImage: {fileID: 21300000, guid: 6ec8f3010a030214bbdfa070d073ab43, type: 3}
+  GestureName: SpongeJim
+  Sender: Mickelodeon Boss
+  TaskName: SpongeJim
+  TaskDesc: The new season of SpongeJim is coming soon
+  TaskFail: 0
+  taskFailName: "That\u2019s not SpongeJim"
+  taskFailDesc: 'That wasn''t actually Spongejim try again '

@@ -23,11 +23,12 @@ public class Hayley : MonoBehaviour
     public int currentNode;
     private static Vector2 HayleyStartPosition;
     private GameManager gm;
-    private bool SliderEntered = false, SliderLeft = false;
+    private bool SliderEntered = false, SliderLeft = false, ThreatMade = false;
     private Animator sliderAnim;
     public Animator HayleyAnim;
     public List<SpriteRenderer> BodySprites;
-
+    private CamerShake shaker;
+    
 
     public List<GameObject> nodes = new List<GameObject>();
     public float loved =5f;
@@ -38,7 +39,7 @@ public class Hayley : MonoBehaviour
 
     private void Start()
     {
-        
+        shaker = FindObjectOfType<CamerShake>();
         sliderAnim = loveSlider.gameObject.GetComponent<Animator>();
         gm = FindObjectOfType<GameManager>();
         HayleyStartPosition = nodes[1].transform.position;
@@ -57,6 +58,7 @@ public class Hayley : MonoBehaviour
             gm.State = GameState.Love;
             if (!SliderEntered)
             {
+                FindObjectOfType<AudioManager>().Play("What");
                 SliderEntered = true;
                 sliderAnim.Play("LoveSliderAnimation");
             }
@@ -67,18 +69,21 @@ public class Hayley : MonoBehaviour
             HayleyAnim.SetBool("Rampage", true);
             
             MoveAlongNodes();
-            if (loved >= 50f)
+            if (loved >= 30f)
             {
-                loved = 50f;
+                FindObjectOfType<AudioManager>().Play("Thank");
+                loved = 30f;
                 State = HayleyStates.Retreat;
             }
 
         }
         if(State == HayleyStates.Retreat)
         {
+            ThreatMade = false;
             HayleyAnim.SetBool("Rampage", false);
             if (!SliderLeft)
             {
+                FindObjectOfType<AudioManager>().Stop("What");
                 SliderLeft = true;
                 sliderAnim.Play("LoveLeaveAnimation");
             }
@@ -87,7 +92,14 @@ public class Hayley : MonoBehaviour
         if(State == HayleyStates.Dormant)
         {
             loved -= Time.deltaTime;
-            Mathf.Clamp(loved, 0, 60f);
+            Mathf.Clamp(loved, 0, 40f);
+
+            if (loved < 7f && !ThreatMade)
+            {
+                FindObjectOfType<AudioManager>().Play("Yell");
+                shaker.shake = 7;
+                ThreatMade = true;
+            }
 
             SliderLeft = false;
             SliderEntered = false;
