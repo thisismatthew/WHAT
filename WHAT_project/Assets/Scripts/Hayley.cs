@@ -24,11 +24,11 @@ public class Hayley : MonoBehaviour
     private static Vector2 HayleyStartPosition;
     private GameManager gm;
     private bool SliderEntered = false, SliderLeft = false, ThreatMade = false;
-    private Animator sliderAnim;
+    public Animator sliderAnim;
     public Animator HayleyAnim;
     public List<SpriteRenderer> BodySprites;
     private CamerShake shaker;
-    
+    private float invisiTimer = 3f;
 
     public List<GameObject> nodes = new List<GameObject>();
     public float loved =5f;
@@ -67,7 +67,14 @@ public class Hayley : MonoBehaviour
         if (State == HayleyStates.Rampage)
         {
             HayleyAnim.SetBool("Rampage", true);
-            
+
+            foreach (SpriteRenderer sr in BodySprites)
+            {
+                Color newColor = sr.color;
+                newColor.a = 1f;
+                sr.color = newColor;
+            }
+
             MoveAlongNodes();
             if (loved >= 30f)
             {
@@ -99,6 +106,13 @@ public class Hayley : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Yell");
                 shaker.shake = 7;
                 ThreatMade = true;
+            }
+
+            foreach (SpriteRenderer sr in BodySprites)
+            {
+                Color newColor = sr.color;
+                newColor.a = 0f;
+                sr.color = newColor;
             }
 
             SliderLeft = false;
@@ -150,7 +164,7 @@ public class Hayley : MonoBehaviour
 
     private void LeaveScreen()
     {
-        timer = Time.deltaTime * moveSpeed;
+        timer = (Time.deltaTime * moveSpeed)/1.5f;
         
         if (Vector2.Distance(transform.position, LeaveSpot.position) > invisibleDistance)
         {

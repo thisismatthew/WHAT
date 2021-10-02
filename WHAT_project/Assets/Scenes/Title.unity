@@ -597,7 +597,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Yell
-    clip: {fileID: 8300000, guid: 4bfc4d2cb46641b41a15332f88665f14, type: 3}
+    clip: {fileID: 8300000, guid: b68c0d5316f81384cad672079112a5ed, type: 3}
     volume: 1
     pitch: 1
     loop: 0

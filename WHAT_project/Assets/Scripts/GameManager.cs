@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 {
     public GameState State = GameState.Start;
     public GameObject HeartProjectile;
-    public float ProjectileSpeed;
+    public float ProjectileSpeed, startTimer = 1f;
     public GameObject ShootPos, Hayley, WorkImages, WorkUI, WinUI;
     public List<DrawTask> Tasks;
     public DrawTask currentGestureTarget;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer daleSpriteRenderer;
     public List<Sprite> spriteState;
     private float turntimer = 1.5f;
-    public Animator ScreenAnim;
+    public Animator ScreenAnim, sliderAnim;
     private bool ScreenOpened = false;
 
     private void Start()
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         foreach (DrawTask t in Tasks)
             t.TaskFail = false;
         
-        State = GameState.Work;
+        State = GameState.Start;
        
         currentGestureTarget = Tasks[0];
         cam = Camera.main;
@@ -54,6 +54,12 @@ public class GameManager : MonoBehaviour
         if (State == GameState.Start)
         {
             Hayley.GetComponent<Hayley>().loved += Time.deltaTime;
+            startTimer -= Time.deltaTime;
+            if (startTimer < 0)
+            {
+                State = GameState.Work;
+                startTimer = 2f;
+            }
         }
         if (State == GameState.Love)
         {
@@ -148,7 +154,7 @@ public class GameManager : MonoBehaviour
         if (resultSuccess)
         {
             FindObjectOfType<AudioManager>().Play("Upload");
-            Debug.Log("Success");
+            sliderAnim.Play("SuccessSlider");
             //lets have a small possibility that this gets flipped. 
             /*int random = Random.RandomRange(0, probabilityOfRandomFail);
             if (random == 0)
@@ -164,6 +170,7 @@ public class GameManager : MonoBehaviour
         }
         if (!resultSuccess)
         {
+            sliderAnim.Play("FailSlider");
             FindObjectOfType<AudioManager>().Play("Fail");
             Debug.Log("Fail");
             previousTask.TaskFail = true;
