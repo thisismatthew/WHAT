@@ -550,7 +550,7 @@ MonoBehaviour:
   sounds:
   - name: MainMusic
     clip: {fileID: 8300000, guid: b58f271d3fedca043b06fb60384134d0, type: 3}
-    volume: 0.2
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -562,7 +562,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Drawing
     clip: {fileID: 8300000, guid: 535641534a94203408357ac414545b40, type: 3}
-    volume: 0.4
+    volume: 0.65
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -574,7 +574,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: HappyBirthday
     clip: {fileID: 8300000, guid: e254927a628e43f43b1e2555e7b9597f, type: 3}
-    volume: 0.2
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -597,7 +597,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Yell
-    clip: {fileID: 8300000, guid: b68c0d5316f81384cad672079112a5ed, type: 3}
+    clip: {fileID: 8300000, guid: 9574b996db4163441a8d80f6f4e771a8, type: 3}
     volume: 1
     pitch: 1
     loop: 0
